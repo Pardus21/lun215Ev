@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбор зоны - Праздник в каждый дом</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Baloo+2:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        .zone-selection {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .zones-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .zone-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .zone-item:hover {
+            border-color: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .zone-item.active {
+            border-color: var(--primary);
+            background-color: rgba(0, 197, 179, 0.1);
+        }
+        
+        .zone-square {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            border-radius: 8px;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .zone-info {
+            flex: 1;
+        }
+        
+        .zone-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: var(--primary-dark);
+        }
+        
+        .zone-price {
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        .zone-capacity {
+            color: #666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="index.html" class="logo">
+                    <img src="assets/images/logo.png" alt="Логотип Праздник в каждый дом">
+                </a>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="index.html#promo" class="nav__link">Акции</a></li>
+                        <li class="nav__item"><a href="index.html#search" class="nav__link">Поиск</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">Мои бронирования</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="seat-selection">
+        <div class="container">
+            <h1 class="page-title">Выберите зону</h1>
+            
+            <div class="location-info">
+                <h2 class="location-info__title">Парк "Сказка"</h2>
+                <p class="location-info__address">Москва, ул. Крылатская, 18</p>
+                <p class="location-info__date">Дата: 15.06.2024</p>
+                <p class="location-info__guests">Гости: 5 взрослых, 10 детей</p>
+            </div>
+
+            <div class="zone-selection">
+                <h3 class="zone-selection__title">Доступные зоны</h3>
+                <p class="zone-selection__desc">Выберите подходящую зону из списка</p>
+                
+                <div class="zones-list">
+                    <div class="zone-item" data-zone="1" data-price="5000" data-capacity="до 15 человек">
+                        <div class="zone-square">1</div>
+                        <div class="zone-info">
+                            <div class="zone-name">Зона 1 - "Солнечная"</div>
+                            <div class="zone-price">5 000 руб.</div>
+                            <div class="zone-capacity">до 15 человек</div>
+                        </div>
+                    </div>
+                    
+                    <div class="zone-item" data-zone="2" data-price="7000" data-capacity="до 20 человек">
+                        <div class="zone-square">2</div>
+                        <div class="zone-info">
+                            <div class="zone-name">Зона 2 - "Тенистая"</div>
+                            <div class="zone-price">7 000 руб.</div>
+                            <div class="zone-capacity">до 20 человек</div>
+                        </div>
+                    </div>
+                    
+                    <div class="zone-item" data-zone="3" data-price="6000" data-capacity="до 18 человек">
+                        <div class="zone-square">3</div>
+                        <div class="zone-info">
+                            <div class="zone-name">Зона 3 - "Центральная"</div>
+                            <div class="zone-price">6 000 руб.</div>
+                            <div class="zone-capacity">до 18 человек</div>
+                        </div>
+                    </div>
+                    
+                    <div class="zone-item" data-zone="4" data-price="8000" data-capacity="до 25 человек">
+                        <div class="zone-square">4</div>
+                        <div class="zone-info">
+                            <div class="zone-name">Зона 4 - "Премиум"</div>
+                            <div class="zone-price">8 000 руб.</div>
+                            <div class="zone-capacity">до 25 человек</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="zone-details">
+                    <h4 class="zone-details__title">Выбранная зона: <span id="selected-zone">Не выбрана</span></h4>
+                    <p class="zone-details__price">Стоимость: <span id="zone-price">0</span> руб.</p>
+                    <a href="booking.html" class="btn btn--primary" id="book-btn" disabled>Перейти к бронированию</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <h3 class="footer__title">Контакты</h3>
+                    <p class="footer__text">8 (800) 111-20-20</p>
+                    <p class="footer__text">info@prazdnik-v-dom.ru</p>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">Навигация</h3>
+                    <ul class="footer__nav">
+                        <li><a href="http://xxxxxx-m1.wsr.ru/return">Возврат</a></li>
+                        <li><a href="http://xxxxxx-m1.wsr.ru/feedback">Обратная связь</a></li>
+                        <li><a href="#">Мои бронирования</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">Мы в соцсетях</h3>
+                    <div class="social">
+                        <a href="#" class="social__link">VK</a>
+                        <a href="#" class="social__link">Telegram</a>
+                        <a href="#" class="social__link">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__copyright">
+                © 2024 Праздник в каждый дом. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Обработка выбора зоны
+        document.querySelectorAll('.zone-item').forEach(zone => {
+            zone.addEventListener('click', function() {
+                // Удаляем активный класс у всех зон
+                document.querySelectorAll('.zone-item').forEach(z => {
+                    z.classList.remove('active');
+                });
+                
+                // Добавляем активный класс к выбранной зоне
+                this.classList.add('active');
+                
+                // Обновляем информацию о выбранной зоне
+                document.getElementById('selected-zone').textContent = this.querySelector('.zone-name').textContent;
+                document.getElementById('zone-price').textContent = this.dataset.price;
+                
+                // Активируем кнопку бронирования
+                document.getElementById('book-btn').removeAttribute('disabled');
+                
+                // Сохраняем выбранную зону в sessionStorage
+                sessionStorage.setItem('selectedZone', JSON.stringify({
+                    id: this.dataset.zone,
+                    name: this.querySelector('.zone-name').textContent,
+                    price: this.dataset.price,
+                    capacity: this.dataset.capacity
+                }));
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бронирование - Праздник в каждый дом</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a href="index.html" class="logo">
+                    <img src="assets/images/logo.png" alt="Логотип Праздник в каждый дом">
+                </a>
+                <nav class="nav">
+                    <ul class="nav__list">
+                        <li class="nav__item"><a href="index.html#promo" class="nav__link">Акции</a></li>
+                        <li class="nav__item"><a href="index.html#search" class="nav__link">Поиск</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link">Управление бронированием</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="booking">
+        <div class="container">
+            <h1 class="page-title">Оформление бронирования</h1>
+            
+            <div class="booking-grid">      
+             <div class="booking-info">
+    <h2 class="booking-info__title">Информация о заказе</h2>
+    
+    <div class="booking-detail">
+        <span class="booking-detail__label">Город:</span>
+        <span class="booking-detail__value" id="booking-city">Москва</span>
+    </div>
+    <div class="booking-detail">
+        <span class="booking-detail__label">Локация:</span>
+        <span class="booking-detail__value" id="booking-location">Парк "Сказка"</span>
+    </div>
+    <div class="booking-detail">
+        <span class="booking-detail__label">Адрес:</span>
+        <span class="booking-detail__value" id="booking-address">ул. Крылатская, 18</span>
+    </div>
+    <div class="booking-detail">
+        <span class="booking-detail__label">Дата мероприятия:</span>
+        <span class="booking-detail__value" id="booking-date">15.06.2024</span>
+    </div>
+    <div class="booking-detail">
+        <span class="booking-detail__label">Количество гостей:</span>
+        <span class="booking-detail__value" id="booking-guests">5 взрослых, 10 детей</span>
+    </div>
+    <div class="booking-detail">
+        <span class="booking-detail__label">Выбранная зона:</span>
+        <span class="booking-detail__value" id="booking-zone-name">Зона 1 - "Солнечная"</span>
+    </div>
+    <div class="booking-detail">
+        <span class="booking-detail__label">Вместимость:</span>
+        <span class="booking-detail__value" id="booking-zone-capacity">до 15 человек</span>
+    </div>
+    <div class="booking-detail">
+        <span class="booking-detail__label">Стоимость аренды:</span>
+        <span class="booking-detail__value" id="booking-price">5 000 руб.</span>
+    </div>
+</div>
+
+                <div class="booking-form">
+                    <h2 class="booking-form__title">Данные для бронирования</h2>
+                    
+                    <form id="booking-form" class="form">
+                        <div class="form__group">
+                            <label for="name" class="form__label">Ваше имя</label>
+                            <input type="text" id="name" name="name" class="form__input" required>
+                        </div>
+                        <div class="form__group">
+                            <label for="phone" class="form__label">Телефон</label>
+                            <input type="tel" id="phone" name="phone" class="form__input" required>
+                        </div>
+                        <div class="form__group">
+                            <label for="email" class="form__label">Email</label>
+                            <input type="email" id="email" name="email" class="form__input" required>
+                        </div>
+                        
+                        <div class="form__group">
+                            <h3 class="form__subtitle">Дополнительные услуги</h3>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="food" name="services" value="food">
+                                <label for="food">Организация питания (+3 000 руб.)</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="animators" name="services" value="animators">
+                                <label for="animators">Услуги аниматоров (+5 000 руб.)</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="host" name="services" value="host">
+                                <label for="host">Услуги ведущего (+4 000 руб.)</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="taxi" name="services" value="taxi">
+                                <label for="taxi">Услуги детского такси (+2 000 руб.)</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form__group">
+                            <label for="comment" class="form__label">Дополнительный комментарий</label>
+                            <textarea id="comment" name="comment" class="form__textarea" rows="4"></textarea>
+                        </div>
+                        
+                        <div class="form__group">
+                            <div class="total-price">
+                                <span class="total-price__label">Итоговая стоимость:</span>
+                                <span class="total-price__value" id="total-price">5 000 руб.</span>
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn--primary">Оформить бронирование</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__col">
+                    <h3 class="footer__title">Контакты</h3>
+                    <p class="footer__text">8 (800) 111-20-20</p>
+                    <p class="footer__text">info@prazdnik-v-dom.ru</p>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">Навигация</h3>
+                    <ul class="footer__nav">
+                        <li><a href="http://xxxxxx-m1.wsr.ru/return">Возврат</a></li>
+                        <li><a href="http://xxxxxx-m1.wsr.ru/feedback">Обратная связь</a></li>
+                        <li><a href="#">Управление бронированием</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h3 class="footer__title">Мы в соцсетях</h3>
+                    <div class="social">
+                        <a href="#" class="social__link">VK</a>
+                        <a href="#" class="social__link">Telegram</a>
+                        <a href="#" class="social__link">Instagram</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__copyright">
+                © 2024 Праздник в каждый дом. Все права защищены.
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        // Расчет итоговой стоимости
+        document.querySelectorAll('input[name="services"]').forEach(checkbox => {
+            checkbox.addEventListener('change', calculateTotal);
+        });
+
+        function calculateTotal() {
+            let total = 5000; // Базовая стоимость зоны
+            
+            // Добавляем стоимость выбранных услуг
+            if (document.getElementById('food').checked) total += 3000;
+            if (document.getElementById('animators').checked) total += 5000;
+            if (document.getElementById('host').checked) total += 4000;
+            if (document.getElementById('taxi').checked) total += 2000;
+            
+            // Обновляем отображение итоговой стоимости
+            document.getElementById('total-price').textContent = total.toLocaleString('ru-RU') + ' руб.';
+        }
+
+        // Обработка отправки формы
+        document.getElementById('booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Здесь можно добавить отправку данных на сервер
+            alert('Бронирование успешно оформлено! Мы свяжемся с вами для подтверждения.');
+            
+            // Перенаправляем на главную страницу
+            window.location.href = 'index.html';
+        });
+    </script>
+</body>
+</html>
